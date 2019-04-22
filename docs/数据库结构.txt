@@ -1,0 +1,21 @@
+数据库名：my_base
+表：
+	in_table:
+		idin_table		in_product	in_time	storehouse_id	in_num
+	in_taizhang:
+		空表
+	lend_info:
+		空表
+	out_table:
+		idout_table	out_product	out_time	storehouse_id	out_num
+	out_taizhang:
+		空表
+	
+	product:
+		product_id	product_name
+	remain_state:
+		cangku_id		product_id	remain
+	storehouse:
+		storehouse_id	storehouse_name
+	user:
+		id	user_name	password		limits
