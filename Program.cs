@@ -5,9 +5,9 @@ using System.Windows.Forms;
 using 入库出库管理系统.windows;
 
 
-
+//程序主入口，显示第一个登录窗口
 namespace 入库出库管理系统
-{
+{   
     static class Program
     {
         /// <summary>
