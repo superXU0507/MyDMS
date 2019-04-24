@@ -1,21 +1,19 @@
 数据库名：my_base
 表：
 	in_table:
-		idin_table		in_product	in_time	storehouse_id	in_num
-	in_taizhang:
-		空表
-	lend_info:
-		空表
+		(PK)idin_table	in_cangku_id	in_product_id	in_time	in_num	supplier other_info
+
 	out_table:
-		idout_table	out_product	out_time	storehouse_id	out_num
-	out_taizhang:
-		空表
-	
+		(PK)idout_table	out_product_id	out_time	out_num	lingquman	other_info
+//入库出库的productID代表的是一批产品，不是仅仅一个ID	
 	product:
-		product_id	product_name
+		(PK)product_id	product_name	product_type	product_brand	product_price
+
 	remain_state:
-		cangku_id		product_id	remain
-	storehouse:
-		storehouse_id	storehouse_name
+		(PK)cangku_id	product_id	product_number	total_price	supplier	other_info
+
+	cangku:
+		（PK)cangku_id	cangku_name
+
 	user:
-		id	user_name	password		limits
+		(PK)id	user_name	password		limits

@@ -10,6 +10,9 @@ namespace 入库出库管理系统.entities
         private String cangkuname;
         private String productname;
         private int remainnum;
+        private int totalprice;
+        private String supplier;
+        private String other_info;
 
         public String Cangkuname
         {
@@ -33,11 +36,49 @@ namespace 入库出库管理系统.entities
 
         public int Remainnum
         {
-            set {
+            set
+            {
                 this.remainnum = value;
             }
-            get {
+            get
+            {
                 return this.remainnum;
+            }
+        }
+
+        public int Totalprice
+        {
+            set
+            {
+                this.totalprice = value;
+            }
+            get
+            {
+                return this.totalprice;
+            }
+        }
+
+        public String Supplier
+        {
+            set
+            {
+                this.supplier = value;
+            }
+            get
+            {
+                return this.supplier;
+            }
+        }
+
+        public String Other_info
+        {
+            set
+            {
+                this.other_info = value;
+            }
+            get
+            {
+                return this.other_info;
             }
         }
 

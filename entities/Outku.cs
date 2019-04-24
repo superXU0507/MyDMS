@@ -18,6 +18,10 @@ namespace 入库出库管理系统.entities
 
         private String cangku_id;
 
+        private String lingquman;
+
+        private String other_info;
+
         private int out_num;
 
         public String Out_id
@@ -42,11 +46,37 @@ namespace 入库出库管理系统.entities
 
         public String Cangku_id
         {
-            set {
+            set
+            {
                 this.cangku_id = value;
             }
-            get {
+            get
+            {
                 return this.cangku_id;
+            }
+        }
+
+        public String Lingquman
+        {
+            set
+            {
+                this.lingquman = value;
+            }
+            get
+            {
+                return this.lingquman;
+            }
+        }
+
+        public String Other_info
+        {
+            set
+            {
+                this.other_info = value;
+            }
+            get
+            {
+                return this.other_info;
             }
         }
         public String Out_time

@@ -251,66 +251,70 @@ namespace 入库出库管理系统.windows
         //添加入库
         private void add_in_Click(object sender, EventArgs e)
         {
-            Product_service pro_ser = new Product_service();
-            Memange_service me_ser = new Memange_service();
-            InKu_service in_ser = new InKu_service();
+            Form addremains = new AddRemain();
 
-            IList<InKu> WhatToInKus = new List<InKu>();
-            //添加之前先检查库存是否有这种产品，要是没有，就添加，同时插入产品表，以及库存表，要是没有，添加，然后修改库存表
-            for (int i = 0; i < WhatToInKu.Count / 3; i++)
-            {
-                InKu inku = new InKu();
-                // inku.In_id = WhatToInKu[3 * i + 0];
-                //获取产品ID
-                String id = pro_ser.getIdByName(WhatToInKu[3 * i + 0]);
-                if (id.Length == 0)
-                {
-                    //插入产品及库存
+            addremains.Show();
+        //以下为原按钮功能代码
+            //Product_service pro_ser = new Product_service();
+            //Memange_service me_ser = new Memange_service();
+            //InKu_service in_ser = new InKu_service();
 
-                    pro_ser.addProduct(WhatToInKu[3 * i + 0]);
+            //IList<InKu> WhatToInKus = new List<InKu>();
+            ////添加之前先检查库存是否有这种产品，要是没有，就添加，同时插入产品表，以及库存表，要是有，添加，然后修改库存表
+            //for (int i = 0; i < WhatToInKu.Count / 3; i++)
+            //{
+            //    InKu inku = new InKu();
+            //    // inku.In_id = WhatToInKu[3 * i + 0];
+            //    //获取产品ID
+            //    String id = pro_ser.getIdByName(WhatToInKu[3 * i + 0]);
+            //    if (id.Length == 0)
+            //    {
+            //        //插入产品及库存
 
-                    Remain remain = new Remain();
-                    remain.Cangkuname = WhatToInKu[3 * i + 1];
-                    remain.Remainnum = Convert.ToInt32(WhatToInKu[3 * i + 2]);
-                    remain.Productname = pro_ser.getIdByName(WhatToInKu[3 * i + 0]);
-                    int k = me_ser.addRemain(remain);//插入库存表
+            //        pro_ser.addProduct(WhatToInKu[3 * i + 0]);
 
-                    Console.WriteLine(k + "[][][][][][][]");
+            //        Remain remain = new Remain();
+            //        remain.Cangkuname = WhatToInKu[3 * i + 1];
+            //        remain.Remainnum = Convert.ToInt32(WhatToInKu[3 * i + 2]);
+            //        remain.Productname = pro_ser.getIdByName(WhatToInKu[3 * i + 0]);
+            //        int k = me_ser.addRemain(remain);//插入库存表
 
-                }
-                else
-                {
-                    //修改库存表
+            //        Console.WriteLine(k + "[][][][][][][]");
 
-                    Remain remain = new Remain();
-                    remain.Cangkuname = WhatToInKu[3 * i + 1];
-                    remain.Remainnum = Convert.ToInt32(WhatToInKu[3 * i + 2]) + me_ser.getRemainNum(pro_ser.getIdByName(WhatToInKu[3 * i + 0]));
-                    remain.Productname = pro_ser.getIdByName(WhatToInKu[3 * i + 0]);
-                    me_ser.updateRemain(remain);
-                }
-                inku.Pro_id = pro_ser.getIdByName(WhatToInKu[3 * i + 0]);
-                inku.In_time = DateTime.Now.Date.ToShortDateString();
-                inku.Cangku_id = WhatToInKu[3 * i + 1];
-                inku.In_num = Convert.ToInt32(WhatToInKu[3 * i + 2]);
-                WhatToInKus.Add(inku);
-            }
+            //    }
+            //    else
+            //    {
+            //        //修改库存表
 
-            int result = in_ser.addKu(WhatToInKus);
+            //        Remain remain = new Remain();
+            //        remain.Cangkuname = WhatToInKu[3 * i + 1];
+            //        remain.Remainnum = Convert.ToInt32(WhatToInKu[3 * i + 2]) + me_ser.getRemainNum(pro_ser.getIdByName(WhatToInKu[3 * i + 0]));
+            //        remain.Productname = pro_ser.getIdByName(WhatToInKu[3 * i + 0]);
+            //        me_ser.updateRemain(remain);
+            //    }
+            //    inku.Pro_id = pro_ser.getIdByName(WhatToInKu[3 * i + 0]);
+            //    inku.In_time = DateTime.Now.Date.ToShortDateString();
+            //    inku.Cangku_id = WhatToInKu[3 * i + 1];
+            //    inku.In_num = Convert.ToInt32(WhatToInKu[3 * i + 2]);
+            //    WhatToInKus.Add(inku);
+            //}
 
-            if (result != 0)
-            {
-                MessageBox.Show("添加成功！");
-                initalData();
-            }
-            else
-            {
-                MessageBox.Show("添加失败！");
-            }
-            int count = WhatToInKu.Count;
-            for (int i = count - 1; i >= 0; i--)
-            {
-                WhatToInKu.RemoveAt(i);
-            }
+            //int result = in_ser.addKu(WhatToInKus);
+
+            //if (result != 0)
+            //{
+            //    MessageBox.Show("添加成功！");
+            //    initalData();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("添加失败！");
+            //}
+            //int count = WhatToInKu.Count;
+            //for (int i = count - 1; i >= 0; i--)
+            //{
+            //    WhatToInKu.RemoveAt(i);
+            //}
 
         }
         private void inku_datagridview_CellValueChanged(

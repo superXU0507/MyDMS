@@ -13,12 +13,12 @@ namespace 入库出库管理系统.data
         public int addKu(IList<InKu> inkus)
         {
             int result = 0;
-            String sql = "insert into in_table(in_product,in_time,storehouse_id,in_num) values('" + inkus[0].Pro_id + "','" + inkus[0].In_time + "','"+inkus[0].Cangku_id+"','" + inkus[0].In_num + "')";
+            String sql = "insert into in_table(idin_table,in_cangku_id,in_product_id,in_time,in_num,supplier,other_info) values('" + inkus[0].In_id + "','" + inkus[0].Cangku_id + "','" + inkus[0].Pro_id + "','" + inkus[0].In_time + "','" + inkus[0].In_num + "','" + inkus[0].Supplier + "','" + inkus[0].Other_info + "')";
             if (inkus.Count > 0)
             {
                 for (int i = 1; i < inkus.Count; i++)
                 {
-                    sql += ",('" + inkus[0].Pro_id + "','" + inkus[0].In_time + "','"+inkus[0].Cangku_id+"','"  + inkus[0].In_num + "')";
+                    sql += ",('" + inkus[0].In_id + "','" + inkus[0].Cangku_id + "','" + inkus[0].Pro_id + "','" + inkus[0].In_time + "','" + inkus[0].In_num + "','" + inkus[0].Supplier + "','" + inkus[0].Other_info + "')";
                 }
             }
             Console.WriteLine(sql);

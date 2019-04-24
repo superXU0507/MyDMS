@@ -9,23 +9,53 @@ namespace 入库出库管理系统.entities
     {
         private String in_id;
 
+        private String cangku_id;
+
         private String pro_id;
 
         private String pro_name;
 
         private String in_time;
 
-        private String cangku_id;
-
         private int in_num;
+
+        private String supplier;
+
+        private String other_info;
 
         public String In_id
         {
-            set {
+            set
+            {
                 this.in_id = value;
             }
-            get {
+            get
+            {
                 return this.in_id;
+            }
+        }
+
+        public String Supplier
+        {
+            set
+            {
+                this.supplier = value;
+            }
+            get
+            {
+                return this.supplier;
+            }
+        }
+
+        public String Other_info
+        {
+            set
+            {
+                this.other_info = value;
+            }
+            get
+            {
+                return this.other_info;
             }
         }
 

@@ -46,5 +46,10 @@ namespace 入库出库管理系统.windows
                 MessageBox.Show("添加失败，请检查原因！");
             }
         }
+
+        private void RadioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
