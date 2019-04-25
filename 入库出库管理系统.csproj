@@ -126,6 +126,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="windows\AddRemain.resx">
+      <DependentUpon>AddRemain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="windows\manage.resx">
+      <DependentUpon>manage.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

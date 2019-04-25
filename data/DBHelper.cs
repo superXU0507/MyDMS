@@ -15,7 +15,7 @@ namespace 入库出库管理系统.data
             get
             {
 
-                String connectionString = "server = localhost; database = my_base; user id = root; password = 950507;";
+                String connectionString = "server = localhost; database = my_base; user id = root; password = 19960930;";
 
                 connection = new MySqlConnection(connectionString);
 
@@ -31,7 +31,7 @@ namespace 入库出库管理系统.data
             MySqlCommand cmd = new MySqlCommand(sql, Connection);
             Console.WriteLine(sql);
             int result = cmd.ExecuteNonQuery();
-
+            
             return result;
         }
 
